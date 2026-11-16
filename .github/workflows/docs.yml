@@ -28,11 +28,18 @@ jobs:
           sudo apt-get update
           sudo apt-get install --yes graphviz
 
+      - name: Libérer de l'espace disque
+        run: |
+          # PyTorch pour Linux tire les bibliothèques CUDA (plusieurs Go) :
+          # on retire du runner des outils inutiles ici (.NET, Android, GHC, CodeQL).
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
+          df -h /
+
       - name: Installer Poetry et les dépendances du projet
         run: |
           pip install --upgrade pip
           pip install poetry
-          poetry install --verbose
+          poetry install --no-cache --verbose
 
       - name: Construire la documentation
         run: |
