@@ -4,6 +4,17 @@ Versions publiées et contenu de chacune.
 
 ## Version History
 
+0.1.1 (2026-11-16)
+
+:   -   **Dépendance `torchvision >= 0.17`** (tirée par deepinv) : sans
+        borne basse, Poetry retenait torchvision 0.12.0, sans paquet pour
+        Python 3.12 ; l'installation échouait. Aucun changement de code.
+    -   Test de `transfer_by_band` sans scipy (qui n'est pas une
+        dépendance du paquet).
+    -   CI : espace disque libéré avant l'installation de PyTorch ;
+        workflows Tests et Documentation au vert, documentation publiée
+        sur GitHub Pages.
+
 0.1.0 (2026-11-16)
 
 :   -   **Création** : les réseaux de neurones d'EOQual, rangés par rôle.

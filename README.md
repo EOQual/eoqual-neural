@@ -37,7 +37,7 @@ pour les publications de référence.
 ## Installation
 
 ```bash
-pip install "eoqual-neural @ git+https://github.com/EOQual/eoqual-neural.git@v0.1.0"
+pip install "eoqual-neural @ git+https://github.com/EOQual/eoqual-neural.git@v0.1.1"
 ```
 
 Dépendances : numpy, PyTorch (≥ 2.2), deepinv, einops. En pratique, on

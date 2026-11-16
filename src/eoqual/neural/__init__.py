@@ -27,7 +27,7 @@ from .denoisers import DENOISERS, get_denoiser, list_denoisers
 from .validation import flat_bias, transfer_by_band
 from .weights import DEEPINV_WEIGHTS, KNOWN_WEIGHTS, resolve_weights, weights_dir
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 __all__ = [
     "__version__",

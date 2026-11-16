@@ -2,7 +2,7 @@
 
 [tool.poetry]
 name = "eoqual-neural"
-version = "0.1.0"
+version = "0.1.1"
 description = "Neural networks for image restoration in Earth observation, organised by role (learned denoisers, unrolled networks)"
 authors = ["Olivier Amram <olivier.amram@free.fr>"]
 maintainers = [
