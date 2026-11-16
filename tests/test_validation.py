@@ -13,9 +13,10 @@ def test_identity_and_scaling(scene):
 
 
 def test_lowpass_attenuates_high_frequencies(scene):
-    from scipy import ndimage as ndi
-
-    f, t = transfer_by_band(scene, ndi.gaussian_filter(scene, 1.5, mode="wrap"))
+    # flou gaussien circulaire de 1,5 pixel, en numpy seul (scipy n'est pas une dépendance)
+    fy, fx = np.meshgrid(np.fft.fftfreq(scene.shape[0]), np.fft.fftfreq(scene.shape[1]), indexing="ij")
+    gain = np.exp(-2 * (np.pi * 1.5) ** 2 * (fx**2 + fy**2))
+    f, t = transfer_by_band(scene, np.fft.ifft2(np.fft.fft2(scene) * gain).real)
     assert t[0] > 0.8 and t[-1] < 0.05 and np.all(np.diff(t) < 0.02)
 
 
