@@ -28,6 +28,9 @@ torch = ">=2.2"
 deepinv = "*"
 # einops (MIT) : requis par certains réseaux de deepinv (Restormer, SwinIR).
 einops = "*"
+# torchvision (BSD-3-Clause), tiré par deepinv : sans borne basse, Poetry
+# retient une version ancienne sans paquet pour les Python récents.
+torchvision = ">=0.17"
 
 [tool.poetry.group.docs.dependencies]
 sphinx = "*"
